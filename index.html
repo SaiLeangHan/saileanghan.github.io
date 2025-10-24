@@ -15,8 +15,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            background: url('haipa.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7); /* Light overlay to improve text readability over haipa.png */
+            z-index: -1;
         }
 
         .container {
@@ -452,6 +465,12 @@
             <div class="certification-item">
                 <h3>Youth Career Development Programme</h3>
                 <p>Youth InnoLab Myanmar - Career development and professional skills training</p>
+            </div>
+            <div class="certificate-upload">
+                <label>Upload Certificates</label>
+                <input type="file" id="certificateInput" accept="image/*,.pdf" multiple>
+                <button class="upload-btn" onclick="uploadCertificate()">Upload</button>
+                <div id="certificateGallery" class="certificate-gallery"></div>
             </div>
         </section>
 
